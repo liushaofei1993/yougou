@@ -1,4 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-  首页
+
+
+
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="16"/>搜索
+    </view>
+  </view>
+
+
+ 
+
 </view>
