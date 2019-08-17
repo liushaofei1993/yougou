@@ -18,3 +18,7 @@
   margin-right: 10px;
 }
  
+ .slide-image{
+  width:750rpx;
+  height:340rpx;
+}
