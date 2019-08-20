@@ -1,2 +1,28 @@
-
-
+<view class="container"> 
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="16" />搜索
+    </view>
+  </view>
+  <view class="main">
+    <view class="menu">
+      <view class="opition {{current===index ? 'active':''}}" wx:for="{{navs}}" wx:key="{{index}}" bindtap="handleGetBrand" data-index="{{index}}">{{item}}</view>
+    </view>
+    <view class="main-right">
+      <view class="category">
+        <view class="title">
+          <text>/</text>
+          电视
+          <text>/</text>
+        </view>
+        <view class="category-list">
+          <view class="category-item">
+            <image src="https://api.zbztb.cn/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"></image>
+          <view class="text">曲面电视</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
