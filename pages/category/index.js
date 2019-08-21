@@ -5,26 +5,7 @@ Page({
    * 页面的初始数据
    */
   data:{
-    navs:[
-     "大家电", 
-     "空调", 
-     "冰箱", 
-     "洗衣机", 
-     "好东西", 
-     "电闹办公", 
-     "大家电", 
-     "空调", 
-     "冰箱", 
-     "洗衣机", 
-     "好东西", 
-     "电闹办公", 
-     "大家电", 
-     "空调", 
-     "冰箱", 
-     "洗衣机", 
-     "好东西", 
-     "电闹办公", 
-    ],
+    navs:[],
     current:0
   },
   /**
@@ -35,9 +16,13 @@ Page({
       url:"/categories"
     }).then(res=>{
       console.log(res)
+      const {message} = res.data
+      this.setData({
+        navs:message
+      })
     })
   },
-  handleGetBrand(event){
+  handleChange(event){
     console.log(event)
     const {index} = event.currentTarget.dataset
     this.setData({

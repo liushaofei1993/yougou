@@ -7,19 +7,22 @@
   </view>
   <view class="main">
     <view class="menu">
-      <view class="opition {{current===index ? 'active':''}}" wx:for="{{navs}}" wx:key="{{index}}" bindtap="handleGetBrand" data-index="{{index}}">{{item}}</view>
+      <view class="opition {{current===index ? 'active':''}}" wx:for="{{navs}}" wx:key="{{index}}" bindtap="handleChange" data-index="{{index}}">{{item.cat_name}}</view>
     </view>
-    <view class="main-right">
-      <view class="category">
+    <!-- 品牌列表,点击的时候切换数据 -->
+    <view class="brand-list">
+      <view class="category" wx:for="{{navs[current].children}}" wx:key="{{index}}">
+        <!-- 标题 -->
         <view class="title">
           <text>/</text>
-          电视
+          {{item.cat_name}}
           <text>/</text>
         </view>
+        <!-- 品牌列表 -->
         <view class="category-list">
-          <view class="category-item">
-            <image src="https://api.zbztb.cn/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"></image>
-          <view class="text">曲面电视</view>
+          <view class="category-item" wx:for="{{ item.children }}" wx:key="{{index}}">
+            <image src="{{item.cat_icon}}" mode="aspectFill"></image>
+            <view class="text">{{ item.cat_name }}</view>
           </view>
         </view>
       </view>
