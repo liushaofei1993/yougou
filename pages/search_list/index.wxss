@@ -15,7 +15,6 @@
   margin-right:10rpx;
 }
 
-
 .tab{
   display:flex;
   justify-content:space-around;
@@ -24,4 +23,37 @@
 }
 .active{
   color:red;
+}
+
+
+.goods-item{
+  display:flex;
+  justify-content: space-between;
+  padding:20rpx;
+  border-bottom:1px solid #ddd;
+}
+.goods-item image{
+  width:200rpx;
+  height:200rpx;
+  flex-shrink:0;
+}
+.goods-item .goods-info{
+  margin-left: 20rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+.goods-info .goods-title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods-info .goods-price{
+  color:red;
+  font-size:14px;
+}
+.goods-info .goods-price text{
+  font-size:22px;
 }
