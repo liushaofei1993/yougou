@@ -1,5 +1,10 @@
+ /* 固定了container的高度为手机屏幕高度的100% */
 .container{
   padding-top:100rpx;
+  width:100%;
+  position:fixed;
+  top:0;
+  bottom:0;
 }
 
 .search{
@@ -25,14 +30,22 @@
 .search-input icon{
   margin-right: 10px;
 }
-
+/* 继承container的高度,设置定位为相对定位,准备子绝父相 */
 .main{
   width:100%;
   display:flex;
   justify-content:space-bitween;
+  height:100%;
+  position:relative;
 }
+/* 菜单栏继承main的高度,只有进行定位脱离文档流才能出现滚动体 */
 .menu{
   width:200rpx;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:scroll;
   background-color:#f5f5f5;
 }
 .menu .opition{
@@ -42,9 +55,16 @@
   box-sizing:border-box;
   border-bottom:1px solid #eee;
 }
+/* 品牌烂继承main的高度,只有进行定位脱离文档流才能出现滚动体 */
 .brand-list{
   flex:1;
   padding:20rpx;
+  position:absolute;
+  left:200rpx;
+  right:0;
+  overflow:scroll;
+  height:100%;
+  box-sizing:border-box;
 }
 .category{
   margin-bottom:60rpx;
@@ -90,5 +110,12 @@
   position:absolute;
   top:20rpx;
   left:0;
+}
+.category .text{
+  width:100%;
+  text-align:center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
