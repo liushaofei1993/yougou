@@ -20,7 +20,7 @@
         </view>
         <!-- 品牌列表 -->
         <view class="category-list">
-          <navigator url="" class="category-item" wx:for="{{ item.children }}" wx:key="{{index}}">
+          <navigator url="/pages/search_list/index?keyword={{item.cat_name}}" class="category-item" wx:for="{{ item.children }}" wx:key="{{index}}">
             <image src="{{item.cat_icon}}" mode="aspectFill"></image>
             <view class="text">{{ item.cat_name }}</view>
           </navigator>
