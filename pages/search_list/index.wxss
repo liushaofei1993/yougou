@@ -58,3 +58,10 @@
 .goods-info .goods-price text{
   font-size:22px;
 }
+
+.load-more{
+  padding:20rpx;
+  text-align:center;
+  font-size:14px;
+  color:#999;
+}
