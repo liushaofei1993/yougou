@@ -30,4 +30,4 @@
   </view>
 </view>
 <!-- 加载更多的提示 -->
-<view class="load-more">加载更多...</view>
+<view class="load-more">{{load ? '加载更多...':'没有更多了'}}</view>

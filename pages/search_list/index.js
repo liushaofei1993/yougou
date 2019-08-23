@@ -9,7 +9,9 @@ Page({
     keyword:"",
     goods:[],
     pagenum:1,
-    pagesize:10
+    pagesize:10,
+    // 是否出现加载更多
+    load:true
   },
 
   // 点击tab栏
@@ -54,10 +56,18 @@ Page({
     }).then(res => {
       console.log(res)
       const { goods } = res.data.message
+      // 循环给数组中的每个对象中的价格值加上后面两位小数点
       const newGoods = goods.map(v => {
         v.decimal_price = Number(v.goods_price).toFixed(2)
         return v
       })
+
+      //当加载的数据goods数组的长度小于pagesize的条数时,说明是最后一页,则显示没有更多了
+      if(goods.length < this.data.pagesize){
+        this.setData({
+          load:false
+        })
+      }
 
       this.setData({
         // 合并新旧的数据
@@ -66,8 +76,14 @@ Page({
     })
   },
 
+
   // 到底时加载下一页
   onReachBottom(){
+    // 判断是否是最后一页,是的话则不再发请求
+    if(!this.data.load){
+      return
+    }
+
     const {pagenum} = this.data
     this.setData({
       pagenum : pagenum+1
